@@ -1,16 +1,18 @@
 
 # optimal_zfs_recordsize.sh  
-  
+
 A shell script that analyzes the file size distribution within a given directory to provide an intelligent ZFS `recordsize` recommendation. It helps you make an informed decision by visualizing the data and understanding the trade-offs between different record sizes for your specific workload.  
-  
+
+![](screen2.jpg)
+
 ## Features  
-  
 - **Detailed Statistics:** Generates a table showing the number of files and the total data volume within various size ranges (from <= 512 B to > 16 MiB).  
 - **Dual Histograms:** Provides two easy-to-read visual histograms to help you understand the data distribution at a glance:  
 	- **By **total data size** in each bin.  
 	- **By **total file count** in each bin.  
 - **Intelligent Recommendation Engine:** Goes beyond simple analysis to provide a concrete `recordsize` suggestion based on a nuanced understanding of different workload types.  
-  
+
+
 ## Usage  
   
 1. **Save the Script:** Save the script content as a file, for example, `optimal_zfs_recordsize.sh`.  
@@ -48,7 +50,6 @@ The script can identify three primary types of workloads:
   
 - `bash`  
 - `gawk` (GNU Awk)  
-  
 ## Disclaimer  
   
 This tool provides a well-reasoned suggestion based on file size distribution. However, the optimal `recordsize` can also be influenced by other factors like database access patterns or I/O block alignment. Always benchmark your specific workload to confirm the best setting for your needs.
