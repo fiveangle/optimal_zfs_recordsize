@@ -24,7 +24,7 @@ sudo chmod +x optimal_zfs_recordsize.sh
   
 3. **Run the Analysis:** Provide the path to the directory you want to analyze as the only argument.  
 ```bash  
-./file-size-stats.sh /path/to/your/dataset  
+./optimal_zfs_recordsize.sh /path/to/your/dataset  
 ```  
   
 ## Understanding the Recommendation  
