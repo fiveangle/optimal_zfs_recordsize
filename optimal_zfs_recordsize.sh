@@ -47,8 +47,6 @@ TOTAL_ESTIMATE=$(/usr/bin/df --output=iused $TARGET_DIR|tail -1)
         if (( FILE_COUNT % UPDATE_EVERY == 0 )); then
             PERCENT=$(( FILE_COUNT * 100 / TOTAL_ESTIMATE ))
 
-            printf "\r: %d" "$TOTAL_ESTIMATE" >&2
-
             # Update progress only occasionally
             FILLED=$(( PERCENT * BAR_WIDTH / 100 ))
             EMPTY=$(( BAR_WIDTH - FILLED ))
