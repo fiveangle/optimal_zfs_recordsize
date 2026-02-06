@@ -52,7 +52,7 @@ TOTAL_ESTIMATE=$(/usr/bin/df --output=iused "$TARGET_DIR"|tail -1)
             EMPTY=$(( BAR_WIDTH - FILLED ))
 
             printf "\r|%-*s%*s|%3d%% Processed: %d   " \
-                "$FILLED" "$(printf '%*s' "$FILLED" | tr ' ' '|')" \
+                "$FILLED" "$(printf '%*s' "$FILLED" | sed 's/ /█/g')" \
                 "$EMPTY" "" \
                 "$PERCENT" \
                 "$FILE_COUNT" >&2
@@ -65,7 +65,7 @@ TOTAL_ESTIMATE=$(/usr/bin/df --output=iused "$TARGET_DIR"|tail -1)
     EMPTY=0
    
     printf "\r|%-*s%*s|%3d%% DONE!               " \
-        "$FILLED" "$(printf '%*s' "$FILLED" | tr ' ' '|')" \
+        "$FILLED" "$(printf '%*s' "$FILLED" | sed 's/ /█/g')" \
         "$EMPTY" "" \
         "$PERCENT" >&2
 
